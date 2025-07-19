@@ -1,0 +1,25 @@
+{
+  "name": "react-tutorial",
+  "version": "1.0.0",
+  "description": "React study",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prithul-Paul/React-Study.git"
+  },
+  "author": "Prithul Paul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Prithul-Paul/React-Study/issues"
+  },
+  "homepage": "https://github.com/Prithul-Paul/React-Study#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
