@@ -11,7 +11,25 @@ const Body = () => {
 
     const [searchText, setSearchText] = useState("");
 
-    console.log(searchText);
+    // console.log(searchText);
+
+    const handelSearch = (e)=>{
+        // setSearchText("");
+        const currentSearchVal = e.target.value;
+        setSearchText(currentSearchVal);
+        // console.log(e.target.value);
+        
+        
+        const filteredres = lisRestraunt.filter((res)=>{
+            return res.info.name.toLowerCase().includes(currentSearchVal.toLowerCase());
+            // console.log(searchText.toLowerCase());
+        });
+
+        
+        setSearchedRestraunt(filteredres);
+        
+        
+    }
     
 
     useEffect(() => {
@@ -19,7 +37,7 @@ const Body = () => {
     }, []);
 
     const fetchApiData = async () => {
-        const api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+        const api = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.48369268619159&lng=88.36907844990493&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
         
         let data = await fetch(api);
         data = await data.json();
@@ -34,17 +52,6 @@ const Body = () => {
         
     }
 
-    // console.log("Outside useeffect");
-    
-    // console.log(useState(resObj));
-    // const arr = useState(resObj);
-    // const lisRestraunt = arr[0];
-    // const setLisRestraunt = arr[1];
-
-    // if(lisRestraunt.length === 0){
-    //     return <Shimmer />
-    // }
-
     return lisRestraunt.length === 0 ? <Shimmer /> : (
 
         <div className="body-container">
@@ -57,22 +64,7 @@ const Body = () => {
 
             <div className="search-container">
                 <label htmlFor="search">Search:</label>
-                <input type="text" onChange={(e)=>{
-                    // setSearchText("");
-                    setSearchText(e.target.value);
-                    // if(searchText !== ""){
-                        const filteredres = lisRestraunt.filter((res)=>{
-                            return res.info.name.toLowerCase().includes(searchText.toLowerCase());
-                            // console.log(searchText.toLowerCase());
-                        });
-                        
-                        setSearchedRestraunt(filteredres);
-                    // }else{
-                    //     setSearchedRestraunt(lisRestraunt);
-                    // }
-                    // setLisRestraunt(searchedRes); 
-                    
-                }} value={searchText} id="search" placeholder="Type to search..." className="search-box"
+                <input type="text" onInput={handelSearch} value={searchText} id="search" placeholder="Type to search..." className="search-box"
                 />
             </div>
 
