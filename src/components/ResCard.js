@@ -16,5 +16,4 @@ const ResCard = ({restraunt}) => {
         </div>
     </div>)
 }
-
 export default ResCard;
