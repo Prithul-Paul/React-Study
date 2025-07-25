@@ -34,6 +34,7 @@ const Body = () => {
 
     useEffect(() => {
         fetchApiData();
+        // fetchOtherData();
     }, []);
 
     const fetchApiData = async () => {
@@ -51,6 +52,7 @@ const Body = () => {
         setSearchedRestraunt(list)
         
     }
+
 
     return lisRestraunt.length === 0 ? <Shimmer /> : (
 
@@ -74,6 +76,7 @@ const Body = () => {
                 ))}
                 {/* <ResCard/> */}
             </div>
+            {/* <button className="showMoreRes" onClick={fetchOtherData}>Show More</button> */}
 
             
         </div>
