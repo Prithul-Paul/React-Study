@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-import { resObj } from "../utils/mockData";
 import ResCard from "./ResCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     const [lisRestraunt, setLisRestraunt] = useState([]);
@@ -30,6 +30,7 @@ const Body = () => {
         
         
     }
+    console.log(lisRestraunt);
     
 
     useEffect(() => {
@@ -72,7 +73,8 @@ const Body = () => {
 
             <div className="res-container">
                 {searchedRestraunt.map((retraunt, index)=>(
-                    <ResCard key={index} restraunt={retraunt}/>
+                    // console.log(retraunt);
+                    <Link key={index} to={"/restaurant/"+ retraunt?.info?.id}><ResCard restraunt={retraunt}/></Link>
                 ))}
                 {/* <ResCard/> */}
             </div>
