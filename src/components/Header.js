@@ -3,12 +3,12 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-    console.log("Header Rendered");
+    // console.log("Header Rendered");
     
     const [loginBtnTxt, setLoginBtnTxt] = useState(false);
 
     useEffect(()=>{
-        console.log("useEffect called");
+        // console.log("useEffect called");
     }, [loginBtnTxt])
     return (
         <div className="header">
