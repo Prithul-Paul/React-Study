@@ -22,7 +22,7 @@ class About extends Component {
             <div className="about-container">
                 <h1>About Us Page</h1>
                 {/* <User name={"Prithul Paul (function)"} location={"Kolkata"} /> */}
-                <UserClass name={"First"} location={"WB"} />
+                {/* <UserClass name={"First"} location={"WB"} /> */}
                 <UserClass name={"Second"} location={"WB"} />
             </div>
         );
